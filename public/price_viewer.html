@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="price">Price : 25000</h1>
+    <script>
+        setInterval(() => {
+                var h1=document.getElementById("price");
+                fetch('/price')
+                    .then((response)=>response.json())
+                    .then((data)=>h1.innerHTML="Price : "+data);
+            }
+        , 100);
+    </script>
+</body>
+</html>
